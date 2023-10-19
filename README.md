@@ -207,11 +207,7 @@ if you find our project useful please cite our paper
 
 ```
 ## Acknowledgements
-We would like to thank the following teams to make automated video generation possible
+We would like to thank the following teams for making automated video generation possible
 - [Deforum-stable-diffusion](https://github.com/deforum-art/deforum-stable-diffusion)
 - [Whisper-OpenAI](https://github.com/openai/whisper)
 - [Image-reward](https://github.com/THUDM/ImageReward)
-- [Google-translate](https://pypi.org/project/googletrans/)
-
-
-
