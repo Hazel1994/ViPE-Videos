@@ -183,6 +183,8 @@ Here we will list a couple of tips that help you generate better videos most of 
 - ***--prefix***: if the video does not really match the song at all, try setting the prefix to broad theme that matches the song. For example 'love' for a love song.
 or 'scholar' for a graduation song.
 - ***--disco_mode***: In this mode, the camera moves from a prespective of a dancing person in a party, its not match mellow songs
+- ***abstractness**: A value between 0 and 1. If the lyrics are easily visualizable you may set it to a low value like 0.4. In general, 0.7 works fine but if you like
+  to generate different videos for the same song, changing this is a safe bet.
 
 ## Citation
 if you find our project useful please cite our paper
