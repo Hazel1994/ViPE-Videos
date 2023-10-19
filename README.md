@@ -8,7 +8,7 @@
 
 </div>
 
-### [ViPE Paper](https://arxiv.org/abs/2310.10543) | [ViPE Project]() | [Prompt Generation Demo](https://huggingface.co/spaces/fittar/ViPE)
+### [ViPE Paper](https://arxiv.org/abs/2310.10543) | [ViPE Project](https://github.com/Hazel1994/ViPE) | [Prompt Generation Demo](https://huggingface.co/spaces/fittar/ViPE)
 
 
 </div>
@@ -23,11 +23,11 @@
 </p>
 
 ## How to generate your own music video
-- [How does it work](#How does it work)
+- [How does it work](#How-does-it-work)
 - [Installation](#installation)
 - [Usage](#usage)
 
-## How does it work
+## How-does-it-work
 - Transcribe the MP3 using Whisper by OpenAI.
 - Provide the lyrics to ViPE for analysis.
 - ViPE generates visual prompts for the lyrics.
