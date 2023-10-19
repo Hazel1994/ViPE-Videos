@@ -30,6 +30,7 @@
 
 ## How-does-it-work
 - Transcribe the MP3 using Whisper by OpenAI.
+- Automatically translate the lyrics to English if they are in other languages
 - Provide the lyrics to ViPE for analysis.
 - ViPE generates visual prompts for the lyrics.
 - Select the most concrete and fitting prompt for each lyric line.
@@ -208,6 +209,7 @@ We would like to thank the following teams to make automated video generation po
 - [Deforum-stable-diffusion](https://github.com/deforum-art/deforum-stable-diffusion)
 - [Whisper-OpenAI](https://github.com/openai/whisper)
 - [Image-reward](https://github.com/THUDM/ImageReward)
+- [Google-translate](https://pypi.org/project/googletrans/)
 
 
 
