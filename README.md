@@ -34,10 +34,10 @@
 - ViPE generates visual prompts for the lyrics.
 - Select the most concrete and fitting prompt for each lyric line.
 - Automatically calculate camera movements based on audio.
-- prompts and camera movements are fed into Deform Stable Diffusion.
+- Prompts and camera movements are fed into Deform Stable Diffusion.
 - Use ImageReward to choose an appealing image from Deform Stable Diffusion.
 - Align the chosen image with the audio.
-- Optionally, add lyrics and ViPE prompts to the video's bottom
+- Optionally, add lyrics and ViPE prompts to the video
 ## Installation
 Clone the repository
 
@@ -60,7 +60,7 @@ Here are a couple of fun examples to get you started:
 
 ### Generating a music video could be as simple as
 
-Assume we have a story about a cute little rabbit ('story.mp3') and I want to save the music video in './rabbit_story/' firectory.
+Assume we have a story about a cute little rabbit ('story.mp3') and we want to save the music video in './rabbit_story/' directory.
 You can simply proceed with:
 ```python
 python generate_video.py --mp3_file story --saving_dir ./rabbit_story/
@@ -101,7 +101,7 @@ timestamps, then type yes. Otherwise, type no to stop the program and manually c
 **Important Note** 
 - Most of the time, there is room for improvements. So we encourage you to check this file.
 - The timing does not have to be super accurate
-- The end of the last line will be set based on the duration of your audio file
+- The end-time of the last line will be set automatically based on the duration of your audio file
 
 The program then proceed to generate prompts using ViPE. These files end with 'lyric2prompt'. In our example,
 its 'story_ctx_1_sample_True_vipe_True_abst_0.7_lyric2prompt'.
@@ -134,7 +134,7 @@ You can check the quality of the generated prompts by simply opening the file:
 ```
 
 Here for example, 'it saw a dark-haired girl.' will be shown as 'A creature with glowing eyes rests on a rocky mountain top, watching a girl with dark hair lying in a clearing'
-. If youre not happy with the generated prompt, you can simply update the file and run the program again.
+. If youre not happy with the generated prompts, you can simply update the file and run the program again.
 
 The program will generate the video in your given directory based on the lyric2prompt file.
 
@@ -172,15 +172,16 @@ There are many hyperparamters you could try:
   --animation_mode ANIMATION_MODE
                         set to 2D for 2D animation
   --disco_mode          
-                        pass the flag for disco mode
+                        pass the flag for disco mode, camera moves from a prespective of a dancing person in a party
 
 ```
 
 Here we will list a couple of tips that help you generate better videos most of the time.
-- ***--context_size***: if youre only visualizing a lsit of quotes or a set of independent lines, set it to 0. otherwise to 1 (the default value).
-- ***--image_quality_number***: If you could afford more memory, higher values than 1 always deliver better quality videos. 3 to 5 is what we recommend.
-- ***--prefix***: if the video does not really match the song at all, try setting it to broad theme that matches the song. For example 'love' for a love song.
+- ***--context_size***: if youre only visualizing a list of quotes or a set of independent lines, set it to 0. Otherwise to 1 (the default value).
+- ***--image_quality_number***: if you could afford more memory, higher values than 1 always deliver better quality videos. 3 to 5 is what we recommend.
+- ***--prefix***: if the video does not really match the song at all, try setting the prefix to broad theme that matches the song. For example 'love' for a love song.
 or 'scholar' for a graduation song.
+- ***--disco_mode***: In this mode, the camera moves from a prespective of a dancing person in a party, its not match mellow songs
 
 ## Citation
 if you find our project useful please cite our paper
@@ -207,9 +208,6 @@ We would like to thank the following teams to make automated video generation po
 - [Deforum-stable-diffusion](https://github.com/deforum-art/deforum-stable-diffusion)
 - [Whisper-OpenAI](https://github.com/openai/whisper)
 - [Image-reward](https://github.com/THUDM/ImageReward)
-
-
-
 
 
 
