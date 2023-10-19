@@ -15,8 +15,13 @@
 
 <h2 align="center">ViPE elegantly conveys the essence of abstract lyrics through visually meaningful representations.</h2>
 
+<p align="center">
+  <a href="https://youtu.be/qEI3fNXdTnY">
+    <img src="./ViPE/thumbnail.png" alt="VIPE Video Demo" width="76%" height="76%">
+  </a>
+</p>
 
-[![Demo Video](./ViPE/thumbnail.png)](https://youtu.be/qEI3fNXdTnY)
+
 
 ## How to generate your own music video
 - [How does it work](#How-does-it-work)
