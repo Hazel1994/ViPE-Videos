@@ -49,7 +49,7 @@ Create a virtual environment and Install the requirements
 ```commandline
 virtualenv env
 source env/bin/activate
-pip isntall --upgrade pip
+pip install --upgrade pip
 pip install -r requirements.txt 
 ```
 
