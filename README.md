@@ -178,12 +178,12 @@ There are many hyperparamters you could try:
 ```
 
 Here we will list a couple of tips that help you generate better videos most of the time.
-- ***--context_size***: if youre only visualizing a list of quotes or a set of independent lines, set it to 0. Otherwise to 1 (the default value).
-- ***--image_quality_number***: if you could afford more memory, higher values than 1 always deliver better quality videos. 3 to 5 is what we recommend.
-- ***--prefix***: if the video does not really match the song at all, try setting the prefix to broad theme that matches the song. For example 'love' for a love song.
+- **--context_size**: if youre only visualizing a list of quotes or a set of independent lines, set it to 0. Otherwise to 1 (the default value).
+- **--image_quality_number**: if you could afford more memory, higher values than 1 always deliver better quality videos. 3 to 5 is what we recommend.
+- **--prefix**: if the video does not really match the song at all, try setting the prefix to broad theme that matches the song. For example 'love' for a love song.
 or 'scholar' for a graduation song.
-- ***--disco_mode***: In this mode, the camera moves from a prespective of a dancing person in a party, its not match mellow songs
-- ***abstractness**: A value between 0 and 1. If the lyrics are easily visualizable you may set it to a low value like 0.4. In general, 0.7 works fine but if you like
+- **--disco_mode**: In this mode, the camera moves from a prespective of a dancing person in a party, its not match mellow songs
+- **--abstractness**: A value between 0 and 1. If the lyrics are easily visualizable you may set it to a low value like 0.4. In general, 0.7 works fine but if you like
   to generate different videos for the same song, changing this is a safe bet.
 
 ## Citation
