@@ -176,9 +176,9 @@ There are many hyperparamters you could try:
 ```
 
 Here we will list a couple of tips that help you generate better videos most of the time.
-- --context_size: if youre only visualizing a lsit of quotes or a set of independent lines, set it to 0. otherwise to 1 (the default value).
-- --image_quality_number: If you could afford more memory, higher values than 1 always deliver better quality videos. 3 to 5 is what we recommend.
-- --prefix: if the video does not really match the song at all, try setting it to broad theme that matches the song. For example 'love' for a love song.
+- ***--context_size***: if youre only visualizing a lsit of quotes or a set of independent lines, set it to 0. otherwise to 1 (the default value).
+- ***--image_quality_number***: If you could afford more memory, higher values than 1 always deliver better quality videos. 3 to 5 is what we recommend.
+- ***--prefix***: if the video does not really match the song at all, try setting it to broad theme that matches the song. For example 'love' for a love song.
 or 'scholar' for a graduation song.
 
 ## Citation
