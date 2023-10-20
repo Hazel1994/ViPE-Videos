@@ -41,7 +41,7 @@ def parse_args():
         help="a prompt for nonvocal portions of the song/story"
     )
     parser.add_argument(
-        "--music_gap_threshold", type=int, default=10,
+        "--music_gap_threshold", type=int, default=7,
         help='nonvocal interval in seconds for music_gap_prompt to be valid '
     )
     parser.add_argument(

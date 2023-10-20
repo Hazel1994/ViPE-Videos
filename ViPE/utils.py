@@ -102,22 +102,22 @@ def get_lyrtic2prompts(args):
             with open(args.transcription_file, 'w') as file:
                 json.dump(plain_trans,file, indent = 6)
 
-        keep_asking = True
-        while keep_asking:
-            # Ask the user a question
-            user_input = input(
-                "\033[91m Please check the timestamps of the generated transcription.\n"
-                "Enter 'yes' to continue if youre happy with the transcription, or 'no' to stop and manually correct the file.): \033[0m")
-            # Check the user's response
-            if user_input.lower() == "yes":
-                keep_asking = False
-                print("Continuing to generate video...")
-                # Add your code here for the part you want to continue with
-            elif user_input.lower() == "no":
-                print("Stopping the program.")
-                sys.exit()  # This will terminate the program
-            else:
-                print('incorrect answer!')
+            keep_asking = True
+            while keep_asking:
+                # Ask the user a question
+                user_input = input(
+                    "\033[91m Please check the timestamps of the generated transcription.\n"
+                    "Enter 'yes' to continue if youre happy with the transcription, or 'no' to stop and manually correct the file.): \033[0m")
+                # Check the user's response
+                if user_input.lower() == "yes":
+                    keep_asking = False
+                    print("Continuing to generate video...")
+                    # Add your code here for the part you want to continue with
+                elif user_input.lower() == "no":
+                    print("Stopping the program.")
+                    sys.exit()  # This will terminate the program
+                else:
+                    print('incorrect answer!')
 
         # laod the transcription_file
         with open(args.transcription_file, 'r') as file:
@@ -190,7 +190,7 @@ def get_lyrtic2prompts(args):
 
                 gap_line = {}
 
-                current_gap = transcription[i]['end'] - transcription[i + 1]['start']
+                current_gap = transcription[i + 1]['start'] - transcription[i]['end']
                 if (len(transcription) > i + 1 and current_gap >= args.music_gap_threshold):
                     gap_line['text'], gap_line['prompt'] = args.music_gap_prompt, generate_from_sentences(
                         [args.music_gap_prompt], model,
