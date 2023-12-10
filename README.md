@@ -189,22 +189,22 @@ or 'scholar' for a graduation song.
 ## Citation
 if you find our project useful please cite our paper
 ```
-@inproceedings{shahmohammadi2023vipe,
-    title = "ViPE: Visualise Pretty-much Everything",
-    author = "Hassan Shahmohammadi and Adhiraj Ghosh and Hendrik P. A. Lensch",
+@inproceedings{shahmohammadi-etal-2023-vipe,
+    title = "{V}i{PE}: Visualise Pretty-much Everything",
+    author = "Shahmohammadi, Hassan  and
+      Ghosh, Adhiraj  and
+      Lensch, Hendrik",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
     booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
     month = dec,
     year = "2023",
     address = "Singapore",
     publisher = "Association for Computational Linguistics",
-    url = "https://arxiv.org/abs/2310.10543",
-    eprint={2310.10543},
-    archivePrefix={arXiv},
-    primaryClass={cs.CL}
-    doi = "",
-    pages = ""
+    url = "https://aclanthology.org/2023.emnlp-main.333",
+    pages = "5477--5494"
 }
-
 ```
 ## Acknowledgements
 We would like to thank the following teams for making automated video generation possible
