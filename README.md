@@ -16,7 +16,7 @@
 <h2 align="center">ViPE elegantly conveys the essence of abstract lyrics through visually meaningful representations.</h2>
 
 <p align="center">
-  <a href="https://youtu.be/qEI3fNXdTnY">
+  <a href="https://www.youtube.com/watch?v=0fUEuLZ5pJ8">
     <img src="./ViPE/thumbnail.png" alt="VIPE Video Demo" width="76%" height="76%">
   </a>
 </p>
