@@ -135,7 +135,7 @@ def get_lyrtic2prompts(args):
             # for semantic similarity
             mpnet_object = mpnet_embed_class(device='cuda', nli=True)
             # for concrteness
-            data = pd.read_csv('./concreteness.csv', header=0,
+            data = pd.read_csv('./ViPE/concreteness.csv', header=0,
                                delimiter='\t')
             word2score = {w: s for w, s in zip(data['WORD'], data['RATING'])}
 
