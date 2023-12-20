@@ -8,7 +8,7 @@
 
 </div>
 
-### [ViPE Paper](https://arxiv.org/abs/2310.10543) | [ViPE Project](https://github.com/Hazel1994/ViPE) | [Prompt Generation Demo](https://huggingface.co/spaces/fittar/ViPE)
+### [ViPE Paper](https://aclanthology.org/2023.emnlp-main.333/) | [ViPE Project](https://github.com/Hazel1994/ViPE) | [Prompt Generation Demo](https://huggingface.co/spaces/fittar/ViPE)
 
 
 </div>
