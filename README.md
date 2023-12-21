@@ -100,7 +100,7 @@ if youre already happy with the lyrics and the
 timestamps, then type yes. Otherwise, type no to stop the program and manually correct transcription file.
 
 **Important Note** 
-- Most of the time, there is room for improvements. So we encourage you to check this file.
+- Most of the time, there is room for improvements. So I encourage you to check this file.
 - The timing does not have to be super accurate
 - The end-time of the last line will be set automatically based on the duration of your audio file
 
@@ -177,7 +177,7 @@ There are many hyperparamters you could try:
 
 ```
 
-Here we will list a couple of tips that help you generate better videos most of the time.
+Here I will list a couple of tips that help you generate better videos most of the time.
 - **--context_size**: if youre only visualizing a list of quotes or a set of independent lines, set it to 0. Otherwise to 1 (the default value).
 - **--image_quality_number**: if you could afford more memory, higher values than 1 always deliver better quality videos. 3 to 5 is what we recommend.
 - **--prefix**: if the video does not really match the song at all, try setting the prefix to broad theme that matches the song. For example 'love' for a love song.
@@ -187,7 +187,7 @@ or 'scholar' for a graduation song.
   to generate different videos for the same song, changing this is a safe bet.
 
 ## Citation
-if you find our project useful please cite our paper
+if you find this project useful please cite my paper
 ```
 @inproceedings{shahmohammadi-etal-2023-vipe,
     title = "{V}i{PE}: Visualise Pretty-much Everything",
