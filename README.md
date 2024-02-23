@@ -3,7 +3,7 @@
 <div>
 
 <div align="center">
-    <img src="./ViPE/pipeline.png"  width="75%" height="75%">
+    <img src="./ViPE/video_pipeline.png"  width="75%" height="75%">
 <div style="text-align:center">
 
 </div>
