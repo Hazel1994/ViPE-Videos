@@ -73,7 +73,7 @@ def split_weighted_subprompts(text, frame = 0, skip_normalize=False):
     if ':' has no value defined, defaults to 1.0
     repeats until no text remaining
     """
-    prompt_parser = re.compile("""
+    prompt_parser = re.compile(r"""
             (?P<prompt>         # capture group for 'prompt'
             (?:\\\:|[^:])+      # match one or more non ':' characters or escaped colons '\:'
             )                   # end 'prompt'

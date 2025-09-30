@@ -6,11 +6,12 @@ import librosa
 import pandas as pd
 import os
 import sys
+import cv2
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 from .generation import generate_from_sentences
 from .semantic_similarity_eval import mpnet_embed_class
-from moviepy.editor import VideoFileClip, AudioFileClip
-from googletrans import Translator
+from moviepy import VideoFileClip, TextClip, CompositeVideoClip, AudioFileClip
+from deep_translator import GoogleTranslator
 
 class dotdict(dict):
     """dot.notation access to dictionary attributes"""
@@ -20,7 +21,7 @@ class dotdict(dict):
 
 def whisper_transcribe(  audio_fpath="audio.mp3", device='cuda'):
     model = whisper.load_model('large').to(device)
-    whispers= model.transcribe(audio_fpath)
+    whispers= model.transcribe(audio_fpath, language='en')
     return whispers
 
 def prepare_ViPE(args):
@@ -57,14 +58,21 @@ def prepare_lyrics(lyrics, context_size, prefix):
     return lyrics
 
 def translate_to_eng(transcription):
+    # Collect all segment texts
+    segments = transcription.get('segments', [])
+    texts = [seg['text'] for seg in segments if seg.get('text')]
 
-    translator = Translator()
-    trs_transcription=[]
-    for line in transcription['segments']:
-        text = line['text']
-        text = translator.translate(text,dest='en').text
-        line['text'] = text
-        trs_transcription.append(line)
+    # Translate all at once using batch
+    translated_texts = GoogleTranslator(source='auto', target='en') \
+                        .translate_batch(texts)
+
+    # Replace each segment's text with translated text
+    trs_transcription = []
+    for seg, new_text in zip(segments, translated_texts):
+        seg_copy = seg.copy()
+        seg_copy['text'] = new_text
+        trs_transcription.append(seg_copy)
+
     return trs_transcription
 
  # import pandas as pd
@@ -80,6 +88,8 @@ def get_concreteness(prompts, word2score):
             scores.append(np.mean(conc_scores))
 
     return scores
+
+
 
 def get_lyrtic2prompts(args):
 
@@ -226,7 +236,6 @@ def get_lyrtic2prompts(args):
         lyric2prompt = json.load(file)
 
     return lyric2prompt
-
 
 def compute_rms(audio, sr, start_time, duration):
     # Extract the segment from the loaded audio
@@ -578,10 +587,7 @@ def get_visual_effects(audio_intensity, fps_p,visual_affect_chunk,mode):
     return {'zooms':zooms, 'x_translations':tr_xs, 'y_translation':tr_ys, 'angles':angles}
 
 
-from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip
 
-import cv2
-import numpy as np
 
 # Function to wrap text into lines with a given number of words per line
 def wrap_text_to_lines(text, max_words_per_line,caption_mode,Vipe=True):
@@ -800,15 +806,31 @@ def add_audio_to_mp4(mp4_path, mp3_path, output_path):
     # Load the audio clip
     audio_clip = AudioFileClip(mp3_path)
 
+    # Get durations
+    video_duration = video_clip.duration
+    audio_duration = audio_clip.duration
+    
+    print(f"Video duration: {video_duration:.2f} seconds")
+    print(f"Audio duration: {audio_duration:.2f} seconds")
+    
+    # Trim video to match audio duration if video is longer
+    if video_duration > audio_duration:
+        print(f"Video is {video_duration - audio_duration:.2f} seconds longer than audio. Trimming video to match audio duration.")
+        video_clip = video_clip.subclipped(0, audio_duration)
+    # If audio is longer, trim audio to match video duration
+    elif audio_duration > video_duration:
+        print(f"Audio is {audio_duration - video_duration:.2f} seconds longer than video. Trimming audio to match video duration.")
+        audio_clip = audio_clip.subclipped(0, video_duration)
+
     # Set the audio of the video clip to the loaded audio clip
-    video_clip = video_clip.set_audio(audio_clip)
+    video_clip = video_clip.with_audio(audio_clip)
 
     # Get the audio codec and bitrate from the input audio clip
     # Get the audio codec and bitrate from the input audio clip
     audio_info = audio_clip.reader.infos
     audio_codec = audio_info.get("codec_name")
     audio_bitrate = audio_info.get("bit_rate")
-    print(audio_bitrate)
+    print(f"Audio bitrate: {audio_bitrate}")
     #  audio_bitrate=audio_bitrate,
 
     # # Calculate the video bitrate based on file size and duration

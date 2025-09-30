@@ -1,0 +1,3 @@
+[submodule "dreambooth"]
+	path = dreambooth
+	url = https://github.com/huggingface/peft.git

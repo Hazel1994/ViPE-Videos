@@ -1,0 +1,31 @@
+I'm going to provide you the lyrics of a song and an interpretation of those lyrics. The interpretations are a descriptive interpretation to be used as prompts for image generation. The lyrics are marked as "text" and the interpretations as "prompt". Your task is to:
+
+Create a short list of no more than five characters with very brief visual descriptions, like:
+
+[
+  {{
+    "name": "Alice",
+    "description": "Woman, middle-aged, brown hair, green eyes"
+  }}
+]
+
+Use this exact JSON structure. Do not use real persons. Characters must be named (e.g., <Alice>) and referenced by name in the prompts. Reuse existing characters whenever possible. Adjust prompts to incorporate characters and improve coherence, while keeping the original descriptive intent.
+
+If an interpretation does not clearly connect to any character, adjust the prompt to make it fit one of the existing or newly created characters.
+
+Return your output in the exact same format and structure as the interpretation file I sent, with only the adjusted prompts changed.
+
+At the end of the file, include the character list in the JSON format specified above.
+
+Constraints:
+
+- No more than 5 characters total.
+- No real persons.
+- No explanations or extra commentary.
+- Character descriptions must be very short and visual only.
+- Final character list must be in JSON format as shown.
+- DO NOT create more than five characters
+
+Here is the lyrics interpretation file:
+
+{json_content}

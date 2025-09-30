@@ -242,7 +242,14 @@ def load_model(root, load_on_run_all=True, check_sha256=True, map_location="cuda
             import safetensors.torch
             pl_sd = safetensors.torch.load_file(ckpt, device=map_location)
         else:
-            pl_sd = torch.load(ckpt, map_location=map_location)
+            # For older checkpoint formats, we need to allow legacy loading
+            # This is safe for trusted model checkpoints
+            try:
+                pl_sd = torch.load(ckpt, map_location=map_location, weights_only=True)
+            except Exception as e:
+                print(f"Warning: Failed to load with weights_only=True, falling back to legacy mode: {e}")
+                print("Note: Loading checkpoint with weights_only=False (ensure checkpoint is from trusted source)")
+                pl_sd = torch.load(ckpt, map_location=map_location, weights_only=False)
         try:
             sd = pl_sd["state_dict"]
         except:
